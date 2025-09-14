@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProofVisit - Cryptographic Visit Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">ProofVisit</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#tech">Technology</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>ProofVisit</h1>
+            <p class="hero-subtitle">Cryptographic proof of business visits using QR codes and secure verification</p>
+            <div class="status-badge">
+                <span class="status-icon">🚧</span>
+                <span>Currently in Development - 75% Complete</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Cryptographic Security</h3>
+                    <p>Every visit generates a tamper-proof SHA-256 hash using device ID, timestamp, and verification word</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>QR Code Scanning</h3>
+                    <p>Simple camera-based QR scanning with real-time business lookup from Firestore database</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Business Analytics</h3>
+                    <p>Real-time visit tracking, trend analysis, and time-based insights with interactive charts</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Privacy First</h3>
+                    <p>Device-based anonymity with no personal data collection or account requirements for customers</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Auto Word Rotation</h3>
+                    <p>Automatic verification word rotation with configurable intervals and custom word lists</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Visit History</h3>
+                    <p>Customers can share cryptographic proofs of loyalty with businesses for verification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Business Setup</h3>
+                        <p>Business owners create QR codes for their locations and set verification words</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Customer Scan</h3>
+                        <p>Customers scan QR codes and ask staff for the current verification word</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Cryptographic Proof</h3>
+                        <p>App generates secure hash combining visit details for tamper-proof verification</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Analytics & History</h3>
+                        <p>Both parties can verify visits and track patterns without compromising privacy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="tech-stack">
+        <div class="container">
+            <h2>Technology Stack</h2>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>iOS Development</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Swift 5.9</span>
+                        <span class="tech-item">SwiftUI</span>
+                        <span class="tech-item">SwiftData</span>
+                        <span class="tech-item">Charts Framework</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Security & Crypto</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">CryptoKit</span>
+                        <span class="tech-item">SHA-256 Hashing</span>
+                        <span class="tech-item">Core Image QR</span>
+                        <span class="tech-item">AVFoundation</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Backend & Cloud</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Firebase Firestore</span>
+                        <span class="tech-item">Firebase Auth</span>
+                        <span class="tech-item">Real-time Listeners</span>
+                        <span class="tech-item">Offline Persistence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="development-status">
+        <div class="container">
+            <h2>Development Progress</h2>
+            <div class="progress-items">
+                <div class="progress-item completed">
+                    <span class="check">✅</span>
+                    <span>QR Code Generation & Scanning</span>
+                </div>
+                <div class="progress-item completed">
+                    <span class="check">✅</span>
+                    <span>Cryptographic Hash Generation</span>
+                </div>
+                <div class="progress-item completed">
+                    <span class="check">✅</span>
+                    <span>Firebase Integration</span>
+                </div>
+                <div class="progress-item completed">
+                    <span class="check">✅</span>
+                    <span>Business Analytics Dashboard</span>
+                </div>
+                <div class="progress-item completed">
+                    <span class="check">✅</span>
+                    <span>Visit History & Sharing</span>
+                </div>
+                <div class="progress-item in-progress">
+                    <span class="check">🔄</span>
+                    <span>Polish & Testing</span>
+                </div>
+                <div class="progress-item pending">
+                    <span class="check">⏳</span>
+                    <span>App Store Submission</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>ProofVisit - Secure Visit Verification</p>
+            <p class="footer-subtitle">Built with Swift & SwiftUI | Developed by Mirsadra</p>
+        </div>
+    </footer>
+</body>
+</html>
