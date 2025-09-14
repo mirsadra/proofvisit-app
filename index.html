@@ -1,199 +1,373 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProofVisit - Cryptographic Visit Verification</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">ProofVisit</div>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How it Works</a>
-                <a href="#tech">Technology</a>
-            </div>
-        </div>
-    </nav>
+    <title>ProofVisit - Futuristic Cryptographic Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the futuristic theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A1A;
+            color: #E0E0E0;
+            overflow-x: hidden;
+        }
 
-    <header class="hero">
-        <div class="container">
-            <h1>ProofVisit</h1>
-            <p class="hero-subtitle">Cryptographic proof of business visits using QR codes and secure verification</p>
-            <div class="status-badge">
-                <span class="status-icon">🚧</span>
-                <span>Currently in Development - 75% Complete</span>
-            </div>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 75%"></div>
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(100, 116, 222, 0.2), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.2), transparent 30%);
+            animation: pulse-bg 10s infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes pulse-bg {
+            from {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            to {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        /* Custom gradient text */
+        .text-gradient {
+            background-image: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Glassmorphism card effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+        }
+        
+        /* Timeline for 'How it Works' section */
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            padding-bottom: 2rem;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 5px;
+            width: 2px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .timeline-item .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #38bdf8;
+            color: #0A0A1A;
+            font-weight: 700;
+            z-index: 1;
+            border: 3px solid #0A0A1A;
+        }
+
+        /* Custom animation for elements fading in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <nav class="bg-black/30 backdrop-blur-lg border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <span class="text-2xl font-bold text-gradient">ProofVisit</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#features" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                            <a href="#how-it-works" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">How it Works</a>
+                            <a href="#tech" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Technology</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Core Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
-                    <h3>Cryptographic Security</h3>
-                    <p>Every visit generates a tamper-proof SHA-256 hash using device ID, timestamp, and verification word</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>QR Code Scanning</h3>
-                    <p>Simple camera-based QR scanning with real-time business lookup from Firestore database</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Business Analytics</h3>
-                    <p>Real-time visit tracking, trend analysis, and time-based insights with interactive charts</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Privacy First</h3>
-                    <p>Device-based anonymity with no personal data collection or account requirements for customers</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Auto Word Rotation</h3>
-                    <p>Automatic verification word rotation with configurable intervals and custom word lists</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Visit History</h3>
-                    <p>Customers can share cryptographic proofs of loyalty with businesses for verification</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Business Setup</h3>
-                        <p>Business owners create QR codes for their locations and set verification words</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-16">
+            <div class="hero-bg"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white leading-tight">
+                    <span class="text-gradient">ProofVisit:</span> Secure Your Presence
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
+                    Cryptographic proof of business visits using QR codes and secure, privacy-first verification.
+                </p>
+                <div class="mt-8 flex flex-col items-center justify-center gap-4">
+                    <div class="inline-flex items-center gap-2 bg-green-500/10 text-green-400 px-4 py-2 rounded-full text-sm font-semibold border border-green-500/30">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <span>In Development - 75% Complete</span>
                     </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Customer Scan</h3>
-                        <p>Customers scan QR codes and ask staff for the current verification word</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Cryptographic Proof</h3>
-                        <p>App generates secure hash combining visit details for tamper-proof verification</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Analytics & History</h3>
-                        <p>Both parties can verify visits and track patterns without compromising privacy</p>
+                    <div class="w-full max-w-sm bg-white/5 p-1 rounded-full">
+                        <div class="bg-gradient-to-r from-sky-500 to-indigo-500 h-2 rounded-full" style="width: 75%"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="tech" class="tech-stack">
-        <div class="container">
-            <h2>Technology Stack</h2>
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <h3>iOS Development</h3>
-                    <div class="tech-items">
-                        <span class="tech-item">Swift 5.9</span>
-                        <span class="tech-item">SwiftUI</span>
-                        <span class="tech-item">SwiftData</span>
-                        <span class="tech-item">Charts Framework</span>
-                    </div>
+        <!-- Features Section -->
+        <section id="features" class="py-20 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Core Features</h2>
+                    <p class="mt-4 text-lg text-gray-400">Built for security, simplicity, and privacy.</p>
                 </div>
-                
-                <div class="tech-category">
-                    <h3>Security & Crypto</h3>
-                    <div class="tech-items">
-                        <span class="tech-item">CryptoKit</span>
-                        <span class="tech-item">SHA-256 Hashing</span>
-                        <span class="tech-item">Core Image QR</span>
-                        <span class="tech-item">AVFoundation</span>
+                <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Feature Cards -->
+                    <div class="glass-card p-8 rounded-2xl fade-in">
+                        <div class="flex-shrink-0">
+                            <!-- SVG Icon -->
+                            <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Cryptographic Security</h3>
+                        <p class="mt-2 text-gray-400">Every visit generates a tamper-proof SHA-256 hash using device ID, timestamp, and verification word.</p>
                     </div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3>Backend & Cloud</h3>
-                    <div class="tech-items">
-                        <span class="tech-item">Firebase Firestore</span>
-                        <span class="tech-item">Firebase Auth</span>
-                        <span class="tech-item">Real-time Listeners</span>
-                        <span class="tech-item">Offline Persistence</span>
+                     <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 100ms;">
+                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> <!-- Plus inside a square --> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3zM9 9h6v6H9z"/></svg>
+                        <h3 class="mt-4 text-xl font-semibold text-white">QR Code Scanning</h3>
+                        <p class="mt-2 text-gray-400">Simple camera-based QR scanning with real-time business lookup from Firestore database.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 200ms;">
+                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Business Analytics</h3>
+                        <p class="mt-2 text-gray-400">Real-time visit tracking, trend analysis, and time-based insights with interactive charts.</p>
+                    </div>
+                     <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 300ms;">
+                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Privacy First</h3>
+                        <p class="mt-2 text-gray-400">Device-based anonymity with no personal data collection or account requirements for customers.</p>
+                    </div>
+                     <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 400ms;">
+                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5"/></svg>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Auto Word Rotation</h3>
+                        <p class="mt-2 text-gray-400">Automatic verification word rotation with configurable intervals and custom word lists.</p>
+                    </div>
+                     <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 500ms;">
+                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m3 6V7m-9 4h6M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Visit History</h3>
+                        <p class="mt-2 text-gray-400">Customers can share cryptographic proofs of loyalty with businesses for verification.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="development-status">
-        <div class="container">
-            <h2>Development Progress</h2>
-            <div class="progress-items">
-                <div class="progress-item completed">
-                    <span class="check">✅</span>
-                    <span>QR Code Generation & Scanning</span>
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">How It Works</h2>
+                    <p class="mt-4 text-lg text-gray-400">A simple and secure process from start to finish.</p>
                 </div>
-                <div class="progress-item completed">
-                    <span class="check">✅</span>
-                    <span>Cryptographic Hash Generation</span>
-                </div>
-                <div class="progress-item completed">
-                    <span class="check">✅</span>
-                    <span>Firebase Integration</span>
-                </div>
-                <div class="progress-item completed">
-                    <span class="check">✅</span>
-                    <span>Business Analytics Dashboard</span>
-                </div>
-                <div class="progress-item completed">
-                    <span class="check">✅</span>
-                    <span>Visit History & Sharing</span>
-                </div>
-                <div class="progress-item in-progress">
-                    <span class="check">🔄</span>
-                    <span>Polish & Testing</span>
-                </div>
-                <div class="progress-item pending">
-                    <span class="check">⏳</span>
-                    <span>App Store Submission</span>
+                <div class="mt-16 max-w-2xl mx-auto">
+                    <!-- Timeline Items -->
+                    <div class="timeline-item fade-in">
+                        <div class="step-number">1</div>
+                        <h3 class="text-xl font-semibold text-white">Business Setup</h3>
+                        <p class="mt-1 text-gray-400">Business owners create QR codes for their locations and set verification words.</p>
+                    </div>
+                    <div class="timeline-item fade-in" style="transition-delay: 100ms;">
+                        <div class="step-number">2</div>
+                        <h3 class="text-xl font-semibold text-white">Customer Scan</h3>
+                        <p class="mt-1 text-gray-400">Customers scan QR codes and ask staff for the current verification word.</p>
+                    </div>
+                    <div class="timeline-item fade-in" style="transition-delay: 200ms;">
+                        <div class="step-number">3</div>
+                        <h3 class="text-xl font-semibold text-white">Cryptographic Proof</h3>
+                        <p class="mt-1 text-gray-400">The app generates a secure hash combining visit details for tamper-proof verification.</p>
+                    </div>
+                    <div class="timeline-item fade-in" style="transition-delay: 300ms;">
+                        <div class="step-number">4</div>
+                        <h3 class="text-xl font-semibold text-white">Analytics & History</h3>
+                        <p class="mt-1 text-gray-400">Both parties can verify visits and track patterns without compromising privacy.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- Technology Stack Section -->
+        <section id="tech" class="py-20 sm:py-24 bg-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Technology Stack</h2>
+                    <p class="mt-4 text-lg text-gray-400">Powered by modern and secure technologies.</p>
+                </div>
+                <div class="mt-16 grid gap-10 md:grid-cols-3">
+                    <div class="text-center md:text-left fade-in">
+                        <h3 class="text-xl font-semibold text-sky-400">iOS Development</h3>
+                        <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
+                            <span class="tech-item">Swift 6.2</span><span class="tech-item">Xcode 26</span><span class="tech-item">SwiftUI</span><span class="tech-item">SwiftData</span><span class="tech-item">Charts Framework</span>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left fade-in" style="transition-delay: 100ms;">
+                        <h3 class="text-xl font-semibold text-sky-400">Security & Crypto</h3>
+                        <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
+                             <span class="tech-item">CryptoKit</span><span class="tech-item">SHA-256 Hashing</span><span class="tech-item">Core Image QR</span><span class="tech-item">AVFoundation</span>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left fade-in" style="transition-delay: 200ms;">
+                        <h3 class="text-xl font-semibold text-sky-400">Backend & Cloud</h3>
+                        <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
+                            <span class="tech-item">Firebase Firestore</span><span class="tech-item">Firebase Auth</span><span class="tech-item">Real-time Listeners</span><span class="tech-item">Offline Persistence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>ProofVisit - Secure Visit Verification</p>
-            <p class="footer-subtitle">Built with Swift & SwiftUI | Developed by Mirsadra</p>
+         <!-- Development Progress Section -->
+        <section class="py-20 sm:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Development Progress</h2>
+                    <p class="mt-4 text-lg text-gray-400">Following our roadmap to launch.</p>
+                </div>
+                <div class="mt-12 space-y-4">
+                    <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in">
+                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-white">QR Code Generation & Scanning</span>
+                    </div>
+                     <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 50ms;">
+                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-white">Cryptographic Hash Generation</span>
+                    </div>
+                     <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 100ms;">
+                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-white">Firebase Integration</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 150ms;">
+                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-white">Business Analytics Dashboard</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 200ms;">
+                        <svg class="h-6 w-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-white">Polish & Testing</span>
+                    </div>
+                     <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 250ms;">
+                        <svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <span class="text-white">App Store Submission</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-lg font-bold text-gradient">ProofVisit</p>
+                <p class="mt-2 text-sm text-gray-400">Built with Swift & SwiftUI | Developed by Mirsadra</p>
+                
+                <!-- Social Media Links -->
+                <div class="mt-4 flex justify-center space-x-6">
+                    <a href="https://x.com/Mirsadraa" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition-colors">
+                        <span class="sr-only">X (Twitter)</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://mastodon.social/@mirsadra" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition-colors">
+                        <span class="sr-only">Mastodon</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://github.com/mirsadra" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Simple Intersection Observer to fade in elements on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // Add a simple class for tech items using tailwind classes
+        document.querySelectorAll('.tech-item').forEach(item => {
+            item.classList.add('inline-block', 'bg-sky-400/10', 'text-sky-300', 'px-3', 'py-1', 'rounded-full', 'text-sm');
+        });
+
+    </script>
 </body>
 </html>
