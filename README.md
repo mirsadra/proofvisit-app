@@ -2,6 +2,11 @@
 
 Official website for ProofVisit - a cryptographic visit verification iOS app.
 
+<div align="center">
+  <img src="icon.png" alt="ProofVisit App Icon" width="1920" height="1280" style="border-radius: 20px;">
+  <h1>ProofVisit Website</h1>
+</div>
+
 ## About ProofVisit
 
 ProofVisit is an iOS application that provides cryptographic proof of business visits using QR codes and secure verification. The app enables customers to prove their presence at businesses while maintaining privacy through device-based anonymity.
