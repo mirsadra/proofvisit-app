@@ -126,6 +126,7 @@
                         <div class="ml-10 flex items-baseline space-x-4">
                             <a href="#features" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
                             <a href="#how-it-works" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">How it Works</a>
+                            <a href="#pricing" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
                             <a href="#tech" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Technology</a>
                         </div>
                     </div>
@@ -160,110 +161,74 @@
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="py-20 sm:py-24">
+        <!-- Subscription Plans Section -->
+        <section id="pricing" class="py-20 sm:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center fade-in">
-                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Core Features</h2>
-                    <p class="mt-4 text-lg text-gray-400">Built for security, simplicity, and privacy.</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Subscription Tiers</h2>
+                    <p class="mt-4 text-lg text-gray-400">Choose a plan that scales with your business.</p>
                 </div>
-                <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Feature Cards -->
-                    <div class="glass-card p-8 rounded-2xl fade-in">
-                        <div class="flex-shrink-0">
-                            <!-- SVG Icon -->
-                            <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                        </div>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Cryptographic Security</h3>
-                        <p class="mt-2 text-gray-400">Every visit generates a tamper-proof SHA-256 hash using device ID, timestamp, and verification word.</p>
+                <div class="mt-16 grid gap-8 lg:grid-cols-3 items-start lg:gap-4 xl:gap-8">
+                    <!-- Free Tier -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full fade-in">
+                        <h3 class="text-2xl font-semibold text-white">Discovery</h3>
+                        <p class="mt-2 text-gray-400">For businesses testing the concept.</p>
+                        <p class="mt-6 text-4xl font-bold text-white">$0<span class="text-base font-medium text-gray-400"> / Unlimited</span></p>
+                        <p class="mt-1 text-sm text-gray-500">Free forever</p>
+                        <a href="#" class="mt-8 block w-full text-center bg-white/10 border border-white/20 hover:bg-white/20 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
+                        <ul class="mt-8 space-y-3 text-sm text-gray-300 flex-grow">
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Basic QR Code Generation</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Up to 50 verifications/month</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>7-Day Visit History</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Single Business Location</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Manual Verification Words</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Community Support</li>
+                        </ul>
                     </div>
-                     <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 100ms;">
-                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> <!-- Plus inside a square --> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3zM9 9h6v6H9z"/></svg>
-                        <h3 class="mt-4 text-xl font-semibold text-white">QR Code Scanning</h3>
-                        <p class="mt-2 text-gray-400">Simple camera-based QR scanning with real-time business lookup from Firestore database.</p>
-                    </div>
-                    <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 200ms;">
-                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Business Analytics</h3>
-                        <p class="mt-2 text-gray-400">Real-time visit tracking, trend analysis, and time-based insights with interactive charts.</p>
-                    </div>
-                     <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 300ms;">
-                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Privacy First</h3>
-                        <p class="mt-2 text-gray-400">Device-based anonymity with no personal data collection or account requirements for customers.</p>
-                    </div>
-                     <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 400ms;">
-                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5"/></svg>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Auto Word Rotation</h3>
-                        <p class="mt-2 text-gray-400">Automatic verification word rotation with configurable intervals and custom word lists.</p>
-                    </div>
-                     <div class="glass-card p-8 rounded-2xl fade-in" style="transition-delay: 500ms;">
-                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m3 6V7m-9 4h6M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Visit History</h3>
-                        <p class="mt-2 text-gray-400">Customers can share cryptographic proofs of loyalty with businesses for verification.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="py-20 sm:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center fade-in">
-                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">How It Works</h2>
-                    <p class="mt-4 text-lg text-gray-400">A simple and secure process from start to finish.</p>
-                </div>
-                <div class="mt-16 max-w-2xl mx-auto">
-                    <!-- Timeline Items -->
-                    <div class="timeline-item fade-in">
-                        <div class="step-number">1</div>
-                        <h3 class="text-xl font-semibold text-white">Business Setup</h3>
-                        <p class="mt-1 text-gray-400">Business owners create QR codes for their locations and set verification words.</p>
-                    </div>
-                    <div class="timeline-item fade-in" style="transition-delay: 100ms;">
-                        <div class="step-number">2</div>
-                        <h3 class="text-xl font-semibold text-white">Customer Scan</h3>
-                        <p class="mt-1 text-gray-400">Customers scan QR codes and ask staff for the current verification word.</p>
-                    </div>
-                    <div class="timeline-item fade-in" style="transition-delay: 200ms;">
-                        <div class="step-number">3</div>
-                        <h3 class="text-xl font-semibold text-white">Cryptographic Proof</h3>
-                        <p class="mt-1 text-gray-400">The app generates a secure hash combining visit details for tamper-proof verification.</p>
-                    </div>
-                    <div class="timeline-item fade-in" style="transition-delay: 300ms;">
-                        <div class="step-number">4</div>
-                        <h3 class="text-xl font-semibold text-white">Analytics & History</h3>
-                        <p class="mt-1 text-gray-400">Both parties can verify visits and track patterns without compromising privacy.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Technology Stack Section -->
-        <section id="tech" class="py-20 sm:py-24 bg-white/5">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center fade-in">
-                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Technology Stack</h2>
-                    <p class="mt-4 text-lg text-gray-400">Powered by modern and secure technologies.</p>
-                </div>
-                <div class="mt-16 grid gap-10 md:grid-cols-3">
-                    <div class="text-center md:text-left fade-in">
-                        <h3 class="text-xl font-semibold text-sky-400">iOS Development</h3>
-                        <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-                            <span class="tech-item">Swift 6.2</span><span class="tech-item">Xcode 26</span><span class="tech-item">SwiftUI</span><span class="tech-item">SwiftData</span><span class="tech-item">Charts Framework</span>
+                    <!-- Pro Tier (Highlighted) -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full fade-in relative border-2 border-sky-400 lg:scale-105" style="transition-delay: 100ms;">
+                         <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                            <span class="inline-flex items-center px-4 py-1 rounded-full text-sm font-semibold tracking-wider text-white bg-gradient-to-r from-sky-500 to-indigo-500">
+                                MOST POPULAR
+                            </span>
                         </div>
+                        <h3 class="text-2xl font-semibold text-white">Business Growth</h3>
+                        <p class="mt-2 text-gray-400">For active local businesses.</p>
+                        <p class="mt-6 text-4xl font-bold text-white">$12.99<span class="text-base font-medium text-gray-400"> / month</span></p>
+                        <p class="mt-1 text-sm text-gray-500">Or $129.99/year (Save 17%)</p>
+                        <a href="#" class="mt-8 block w-full text-center bg-gradient-to-r from-sky-500 to-indigo-500 hover:opacity-90 text-white font-semibold py-3 rounded-lg transition-opacity">Start 14-day Trial</a>
+                        <ul class="mt-8 space-y-3 text-sm text-gray-300 flex-grow">
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unlimited Verifications</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Real-time Analytics & Dashboard</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Complete Visit History</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom QR Codes & Branding</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Customer Loyalty Program</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Data Export (CSV, PDF, JSON)</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Auto-rotating Verification Words</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Up to 3 Business Locations</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Priority Email Support</li>
+                        </ul>
                     </div>
-                    <div class="text-center md:text-left fade-in" style="transition-delay: 100ms;">
-                        <h3 class="text-xl font-semibold text-sky-400">Security & Crypto</h3>
-                        <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-                             <span class="tech-item">CryptoKit</span><span class="tech-item">SHA-256 Hashing</span><span class="tech-item">Core Image QR</span><span class="tech-item">AVFoundation</span>
-                        </div>
-                    </div>
-                    <div class="text-center md:text-left fade-in" style="transition-delay: 200ms;">
-                        <h3 class="text-xl font-semibold text-sky-400">Backend & Cloud</h3>
-                        <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-                            <span class="tech-item">Firebase Firestore</span><span class="tech-item">Firebase Auth</span><span class="tech-item">Real-time Listeners</span><span class="tech-item">Offline Persistence</span>
-                        </div>
+
+                    <!-- Enterprise Tier -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full fade-in" style="transition-delay: 200ms;">
+                        <h3 class="text-2xl font-semibold text-white">Enterprise</h3>
+                        <p class="mt-2 text-gray-400">For franchises and chains.</p>
+                        <p class="mt-6 text-4xl font-bold text-white">Custom<span class="text-base font-medium text-gray-400"> / year</span></p>
+                        <p class="mt-1 text-sm text-gray-500">Billed annually</p>
+                        <a href="#" class="mt-8 block w-full text-center bg-white/10 border border-white/20 hover:bg-white/20 text-white font-semibold py-3 rounded-lg transition-colors">Contact Sales</a>
+                         <ul class="mt-8 space-y-3 text-sm text-gray-300 flex-grow">
+                            <li class="flex items-center font-semibold text-white">Everything in Pro, plus:</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unlimited Business Locations</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>White-label Branding</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>API Access & Webhooks</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Advanced Analytics & Reporting</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dedicated Phone Support</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom Integrations</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Team Management</li>
+                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dedicated Account Manager</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -309,35 +274,9 @@
 
     <!-- Footer -->
     <footer class="border-t border-white/10">
-        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-lg font-bold text-gradient">ProofVisit</p>
-                <p class="mt-2 text-sm text-gray-400">Built with Swift & SwiftUI | Developed by Mirsadra</p>
-                
-                <!-- Social Media Links -->
-                <div class="mt-4 flex justify-center space-x-6">
-                    <a href="https://x.com/Mirsadraa" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition-colors">
-                        <span class="sr-only">X (Twitter)</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                    
-                    <a href="https://mastodon.social/@mirsadra" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition-colors">
-                        <span class="sr-only">Mastodon</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/>
-                        </svg>
-                    </a>
-                    
-                    <a href="https://github.com/mirsadra" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition-colors">
-                        <span class="sr-only">GitHub</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p class="text-lg font-bold text-gradient">ProofVisit</p>
+            <p class="mt-2 text-sm">Built with Swift & SwiftUI | Developed by Mirsadra</p>
         </div>
     </footer>
 
@@ -371,3 +310,4 @@
     </script>
 </body>
 </html>
+
