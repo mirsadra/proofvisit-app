@@ -128,6 +128,7 @@
                             <a href="#how-it-works" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">How it Works</a>
                             <a href="#pricing" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
                             <a href="#tech" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Technology</a>
+                            <a href="#domain-verification" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Domain Setup</a>
                         </div>
                     </div>
                 </div>
@@ -271,6 +272,58 @@
         </section>
 
     </main>
+
+         <!-- Domain Verification Section -->
+    <section class="py-20 sm:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Domain Verification</h2>
+                <p class="mt-4 text-lg text-gray-400">Setup instructions for domain configuration</p>
+            </div>
+                
+            <div class="mt-8 glass-card p-6 rounded-2xl fade-in">
+                <p class="text-gray-300 mb-6">To verify your domain, add the following DNS records in your domain registrar:</p>
+                    
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-300">
+                        <thead class="text-xs uppercase bg-white/5">
+                            <tr>
+                                <th class="px-4 py-3">Domain name</th>
+                                <th class="px-4 py-3">Type</th>
+                                <th class="px-4 py-3">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-white/10">
+                                <td class="px-4 py-3 font-mono text-sky-300">mirsadra.github.io</td>
+                                <td class="px-4 py-3 font-mono">TXT</td>
+                                <td class="px-4 py-3 font-mono text-green-300">v=spf1 include:_spf.firebasemail.com ~all</td>
+                            </tr>
+                            <tr class="border-b border-white/10">
+                                <td class="px-4 py-3 font-mono text-sky-300">mirsadra.github.io</td>
+                                <td class="px-4 py-3 font-mono">TXT</td>
+                                <td class="px-4 py-3 font-mono text-green-300">firebase=proof-51964</td>
+                            </tr>
+                            <tr class="border-b border-white/10">
+                                <td class="px-4 py-3 font-mono text-sky-300">firebase1._domainkey.mirsadra.github.io</td>
+                                <td class="px-4 py-3 font-mono">CNAME</td>
+                                <td class="px-4 py-3 font-mono text-green-300">mail-mirsadra-github-io.dkim1._domainkey.firebasemail.com</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-mono text-sky-300">firebase2._domainkey.mirsadra.github.io</td>
+                                <td class="px-4 py-3 font-mono">CNAME</td>
+                                 <td class="px-4 py-3 font-mono text-green-300">mail-mirsadra-github-io.dkim2._domainkey.firebasemail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                    
+                <div class="mt-6 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+                    <p class="text-amber-300 text-sm"><strong>Note:</strong> These DNS records must be configured in your domain registrar's DNS settings, not in GitHub. The actual DNS configuration happens where your domain is registered (GoDaddy, Namecheap, Cloudflare, etc.).</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="border-t border-white/10">
