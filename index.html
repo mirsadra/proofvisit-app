@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProofVisit - Futuristic Cryptographic Verification</title>
+    <title>ProofVisit - Beta Released | Parkinsad Ltd</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Custom styles for the futuristic theme */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0A0A1A;
@@ -19,29 +36,13 @@
 
         .hero-bg {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image:
-                radial-gradient(circle at 15% 50%, rgba(100, 116, 222, 0.2), transparent 30%),
-                radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.2), transparent 30%);
-            animation: pulse-bg 10s infinite alternate;
+                radial-gradient(circle at 15% 50%, rgba(100, 116, 222, 0.15), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.15), transparent 30%);
             z-index: -1;
         }
 
-        @keyframes pulse-bg {
-            from {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            to {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-        }
-        
-        /* Custom gradient text */
         .text-gradient {
             background-image: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
@@ -49,62 +50,48 @@
             color: transparent;
         }
 
-        /* Glassmorphism card effect */
         .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
         }
 
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.5);
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
-        }
-        
-        /* Timeline for 'How it Works' section */
-        .timeline-item {
-            position: relative;
-            padding-left: 50px;
-            padding-bottom: 2rem;
-        }
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 19px;
-            top: 5px;
-            width: 2px;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        .timeline-item .step-number {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: #38bdf8;
-            color: #0A0A1A;
-            font-weight: 700;
-            z-index: 1;
-            border: 3px solid #0A0A1A;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.1);
         }
 
-        /* Custom animation for elements fading in on scroll */
+        /* Phone Mockup Styling */
+        .phone-mockup {
+            border-radius: 40px;
+            border: 8px solid #2d2d2d;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background: #000;
+        }
+        
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #2d2d2d;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 20;
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .fade-in.visible {
             opacity: 1;
@@ -114,21 +101,19 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
     <header class="fixed top-0 left-0 w-full z-50">
-        <nav class="bg-black/30 backdrop-blur-lg border-b border-white/10">
+        <nav class="bg-[#0A0A1A]/80 backdrop-blur-lg border-b border-white/5">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
-                        <span class="text-2xl font-bold text-gradient">ProofVisit</span>
+                        <span class="text-2xl font-bold text-gradient tracking-tight">ProofVisit</span>
+                        <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30">BETA</span>
                     </div>
                     <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="#features" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
-                            <a href="#how-it-works" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">How it Works</a>
-                            <a href="#pricing" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                            <a href="#tech" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Technology</a>
-                            <a href="#domain-verification" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Domain Setup</a>
+                        <div class="ml-10 flex items-baseline space-x-6">
+                            <a href="#showcase" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">App Tour</a>
+                            <a href="#pricing" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Pricing</a>
+                            <a href="#beta-access" class="px-4 py-2 rounded-full text-sm font-semibold bg-white text-black hover:bg-gray-200 transition-colors">Get Beta Access</a>
                         </div>
                     </div>
                 </div>
@@ -137,184 +122,229 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-16">
+        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
             <div class="hero-bg"></div>
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white leading-tight">
-                    <span class="text-gradient">ProofVisit:</span> Secure Your Presence
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-8 fade-in">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    Beta Released - Join the Testing Phase
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight mb-6 fade-in">
+                    Verify Reality. <br />
+                    <span class="text-gradient">Secure Your Presence.</span>
                 </h1>
-                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
-                    Cryptographic proof of business visits using QR codes and secure, privacy-first verification.
+                
+                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 fade-in">
+                    The cryptographic proof of visit standard. Now available on <span class="text-white font-semibold">iPhone</span> and <span class="text-white font-semibold">iPad</span>.
                 </p>
-                <div class="mt-8 flex flex-col items-center justify-center gap-4">
-                    <div class="inline-flex items-center gap-2 bg-green-500/10 text-green-400 px-4 py-2 rounded-full text-sm font-semibold border border-green-500/30">
-                        <span class="relative flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                        </span>
-                        <span>In Development - 75% Complete</span>
-                    </div>
-                    <div class="w-full max-w-sm bg-white/5 p-1 rounded-full">
-                        <div class="bg-gradient-to-r from-sky-500 to-indigo-500 h-2 rounded-full" style="width: 75%"></div>
-                    </div>
+
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 fade-in">
+                    <a href="#beta-access" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-sky-900/20">
+                        Request TestFlight Invite
+                    </a>
+                    <a href="#support" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-lg hover:bg-white/10 transition-colors">
+                        Support Development
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Subscription Plans Section -->
-        <section id="pricing" class="py-20 sm:py-24">
+        <section id="showcase" class="py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center fade-in">
-                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Subscription Tiers</h2>
-                    <p class="mt-4 text-lg text-gray-400">Choose a plan that scales with your business.</p>
-                </div>
-                <div class="mt-16 grid gap-8 lg:grid-cols-3 items-start lg:gap-4 xl:gap-8">
-                    <!-- Free Tier -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full fade-in">
-                        <h3 class="text-2xl font-semibold text-white">Discovery</h3>
-                        <p class="mt-2 text-gray-400">For businesses testing the concept.</p>
-                        <p class="mt-6 text-4xl font-bold text-white">$0<span class="text-base font-medium text-gray-400"> / Unlimited</span></p>
-                        <p class="mt-1 text-sm text-gray-500">Free forever</p>
-                        <a href="#" class="mt-8 block w-full text-center bg-white/10 border border-white/20 hover:bg-white/20 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
-                        <ul class="mt-8 space-y-3 text-sm text-gray-300 flex-grow">
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Basic QR Code Generation</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Up to 50 verifications/month</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>7-Day Visit History</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Single Business Location</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Manual Verification Words</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Community Support</li>
-                        </ul>
-                    </div>
-
-                    <!-- Pro Tier (Highlighted) -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full fade-in relative border-2 border-sky-400 lg:scale-105" style="transition-delay: 100ms;">
-                         <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                            <span class="inline-flex items-center px-4 py-1 rounded-full text-sm font-semibold tracking-wider text-white bg-gradient-to-r from-sky-500 to-indigo-500">
-                                MOST POPULAR
-                            </span>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    
+                    <div class="fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                            Experience the Future of <br />
+                            <span class="text-gradient">Loyalty & Verification</span>
+                        </h2>
+                        <div class="space-y-6 text-gray-400 text-lg">
+                            <p>
+                                <strong class="text-white">For Business Owners:</strong> 
+                                Don't wait for the future. Encourage your customers to verify their visits cryptographically. Build a loyal community that can prove they were really there.
+                            </p>
+                            <p>
+                                <strong class="text-white">For Customers:</strong> 
+                                ProofVisit works best when your local spots are onboard. If your favorite cafe or store isn't on ProofVisit yet, ask them to join the beta!
+                            </p>
+                            <div class="pt-4 flex items-center gap-4">
+                                <span class="inline-flex items-center gap-2 bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700">
+                                    <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.61-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.18 2.83zM13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.04.05-2.29.69-3.02 1.55-.67.78-1.26 2.05-1.11 3.15 1.19.09 2.42-.71 3.06-1.59z"></path></svg>
+                                    <span class="text-sm font-semibold">iOS App</span>
+                                </span>
+                                <span class="inline-flex items-center gap-2 bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700">
+                                    <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H5V4h14v16z"/></svg>
+                                    <span class="text-sm font-semibold">iPad Optimized</span>
+                                </span>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-semibold text-white">Business Growth</h3>
-                        <p class="mt-2 text-gray-400">For active local businesses.</p>
-                        <p class="mt-6 text-4xl font-bold text-white">$12.99<span class="text-base font-medium text-gray-400"> / month</span></p>
-                        <p class="mt-1 text-sm text-gray-500">Or $129.99/year (Save 17%)</p>
-                        <a href="#" class="mt-8 block w-full text-center bg-gradient-to-r from-sky-500 to-indigo-500 hover:opacity-90 text-white font-semibold py-3 rounded-lg transition-opacity">Start 14-day Trial</a>
-                        <ul class="mt-8 space-y-3 text-sm text-gray-300 flex-grow">
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unlimited Verifications</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Real-time Analytics & Dashboard</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Complete Visit History</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom QR Codes & Branding</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Customer Loyalty Program</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Data Export (CSV, PDF, JSON)</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Auto-rotating Verification Words</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Up to 3 Business Locations</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Priority Email Support</li>
-                        </ul>
                     </div>
 
-                    <!-- Enterprise Tier -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full fade-in" style="transition-delay: 200ms;">
-                        <h3 class="text-2xl font-semibold text-white">Enterprise</h3>
-                        <p class="mt-2 text-gray-400">For franchises and chains.</p>
-                        <p class="mt-6 text-4xl font-bold text-white">Custom<span class="text-base font-medium text-gray-400"> / year</span></p>
-                        <p class="mt-1 text-sm text-gray-500">Billed annually</p>
-                        <a href="#" class="mt-8 block w-full text-center bg-white/10 border border-white/20 hover:bg-white/20 text-white font-semibold py-3 rounded-lg transition-colors">Contact Sales</a>
-                         <ul class="mt-8 space-y-3 text-sm text-gray-300 flex-grow">
-                            <li class="flex items-center font-semibold text-white">Everything in Pro, plus:</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unlimited Business Locations</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>White-label Branding</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>API Access & Webhooks</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Advanced Analytics & Reporting</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dedicated Phone Support</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom Integrations</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Team Management</li>
-                            <li class="flex items-center"><svg class="h-5 w-5 text-sky-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dedicated Account Manager</li>
+                    <div class="relative h-[600px] w-full flex justify-center items-center perspective-1000 fade-in">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-sky-500/30 rounded-full blur-[80px]"></div>
+
+                        <div class="absolute z-20 w-[280px] animate-float phone-mockup" style="transform: rotate(-6deg) translateX(-40px);">
+                            <div class="phone-notch"></div>
+                            <img src="Simulator Screenshot - iPhone 13 Pro Max (6.5&quot;) - 2026-02-07 at 17.19.01.png" alt="Business Dashboard" class="w-full h-auto block">
+                        </div>
+
+                        <div class="absolute z-10 w-[280px] phone-mockup" style="transform: rotate(6deg) translateX(80px) translateY(40px); opacity: 0.8; filter: brightness(0.7);">
+                            <div class="phone-notch"></div>
+                            <img src="IMG_3454.png" alt="Visit History" class="w-full h-auto block">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-24 bg-white/5 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Simple Pricing for Growth</h2>
+                    <p class="mt-4 text-gray-400">Start for free, upgrade when you're ready to scale.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    
+                    <div class="glass-card p-8 rounded-3xl fade-in">
+                        <h3 class="text-xl font-semibold text-white">Discovery</h3>
+                        <p class="mt-2 text-sm text-gray-400">Perfect for small shops testing the water.</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-bold text-white">£0</span>
+                            <span class="text-gray-500"> / forever</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-sm text-gray-300">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Unlimited Customers
+                            </li>
+                            <li class="flex items-center text-sm text-gray-300">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Basic QR Generation
+                            </li>
+                            <li class="flex items-center text-sm text-gray-300">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                7-Day History
+                            </li>
                         </ul>
+                        <a href="#beta-access" class="block w-full py-3 px-6 text-center rounded-xl bg-white/10 text-white font-semibold hover:bg-white/20 transition-colors">Start Free</a>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl border-sky-500/50 relative overflow-hidden fade-in" style="background: linear-gradient(145deg, rgba(56,189,248,0.1), rgba(0,0,0,0));">
+                        <div class="absolute top-0 right-0 bg-sky-500 text-xs font-bold px-3 py-1 rounded-bl-xl text-black">RECOMMENDED</div>
+                        <h3 class="text-xl font-semibold text-white">Professional</h3>
+                        <p class="mt-2 text-sm text-gray-400">For businesses serious about loyalty.</p>
+                        <div class="my-6">
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-bold text-white">£9.99</span>
+                                <span class="text-gray-500 ml-1">/ month</span>
+                            </div>
+                            <div class="mt-2 text-sm text-sky-400 font-medium">
+                                Or £59.99 for 1st year <span class="text-gray-500 font-normal line-through text-xs ml-1">£89.99</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-sm text-white font-medium">
+                                <svg class="w-5 h-5 text-sky-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Real-time Analytics & Dashboard
+                            </li>
+                            <li class="flex items-center text-sm text-white font-medium">
+                                <svg class="w-5 h-5 text-sky-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Unlimited History & Exports
+                            </li>
+                            <li class="flex items-center text-sm text-white font-medium">
+                                <svg class="w-5 h-5 text-sky-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                iPad Kiosk Mode
+                            </li>
+                            <li class="flex items-center text-sm text-white font-medium">
+                                <svg class="w-5 h-5 text-sky-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Auto-rotating Verification Words
+                            </li>
+                        </ul>
+                        <a href="#beta-access" class="block w-full py-3 px-6 text-center rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold hover:opacity-90 transition-opacity">Get Pro Beta</a>
                     </div>
                 </div>
             </div>
         </section>
 
-         <!-- Development Progress Section -->
-        <section class="py-20 sm:py-24">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center fade-in">
-                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Development Progress</h2>
-                    <p class="mt-4 text-lg text-gray-400">Following our roadmap to launch.</p>
+        <section id="beta-access" class="py-24 relative">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <div class="glass-card p-10 rounded-3xl fade-in">
+                    <h2 class="text-3xl font-bold text-white mb-4">Join the TestFlight Beta</h2>
+                    <p class="text-gray-400 mb-8">
+                        We are currently inviting users to test the app via Apple TestFlight. Enter your Apple ID email below to receive an invitation code.
+                    </p>
+                    
+                    <form class="max-w-md mx-auto flex gap-2 flex-col sm:flex-row mb-8" onsubmit="event.preventDefault(); alert('Thank you! You have been added to the waitlist.');">
+                        <input type="email" placeholder="your@email.com" required class="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-sky-500">
+                        <button type="submit" class="bg-white text-black font-bold px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors">
+                            Request Invite
+                        </button>
+                    </form>
+                    <p class="text-xs text-gray-500">By submitting, you agree to receive beta updates from ProofVisit.</p>
                 </div>
-                <div class="mt-12 space-y-4">
-                    <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in">
-                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span class="text-white">QR Code Generation & Scanning</span>
+
+                <div id="support" class="mt-16 fade-in">
+                    <div class="inline-block p-1 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 mb-6">
+                        <span class="px-4 py-1 text-xs font-bold text-yellow-500 uppercase tracking-wide">Support the Founder</span>
                     </div>
-                     <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 50ms;">
-                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span class="text-white">Cryptographic Hash Generation</span>
-                    </div>
-                     <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 100ms;">
-                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span class="text-white">Firebase Integration</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 150ms;">
-                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span class="text-white">Business Analytics Dashboard</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 200ms;">
-                        <svg class="h-6 w-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span class="text-white">Polish & Testing</span>
-                    </div>
-                     <div class="glass-card p-4 rounded-lg flex items-center gap-4 fade-in" style="transition-delay: 250ms;">
-                        <svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                        <span class="text-white">App Store Submission</span>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Help Us Register Parkinsad Ltd.</h3>
+                    <p class="text-gray-400 max-w-xl mx-auto mb-8">
+                        ProofVisit is developed by <strong>Parkinsad Ltd</strong> (currently pending registration). We are a bootstrapped startup seeking funding to cover legal registration fees and server costs.
+                    </p>
+                    
+                    <a href="https://buymeacoffee.com/mirsadra" target="_blank" class="inline-flex items-center gap-3 bg-[#FFDD00] text-black px-6 py-3 rounded-lg font-bold hover:bg-[#ffea00] transition-colors transform hover:scale-105 duration-200">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.216 6.415l-.132-.666c-.119-.596-.387-1.166-.783-1.623-.482-.556-1.137-.909-1.863-.984-1.291-.133-2.613-.231-3.958-.293l.363-1.803c.126-.626-.263-1.248-.888-1.374l-1.011-.203c-.624-.126-1.247.263-1.374.888l-.358 1.776c-1.385-.015-2.784.004-4.178.077-.732.039-1.401.36-1.905.894-.521.551-.81 1.259-.766 2.012l.144 2.508c.119 2.062 1.155 3.935 2.766 5.147 1.611 1.212 3.666 1.739 5.723 1.488l.685 2.872c-1.782.529-3.085 2.143-3.085 4.075 0 2.345 1.906 4.251 4.251 4.251 2.346 0 4.251-1.906 4.251-4.251 0-1.932-1.303-3.546-3.085-4.075l.623-3.089c1.868-.696 3.262-2.31 3.553-4.298l.192-1.984c.033-.339.022-.676-.022-1.002zm-12.787 5.753c-1.109-.834-1.822-2.124-1.904-3.543l-.144-2.508c-.012-.208.066-.401.206-.549.136-.144.316-.229.513-.239 1.442-.075 2.895-.095 4.331-.08l-.802 6.919zm10.596-2.525c-.212 1.448-1.267 2.646-2.688 3.097l-.608-5.32c1.293.061 2.563.155 3.793.283.398.041.657.346.697.744l.192 1.984c.005.064.002.131-.009.199-.028.349-.168.667-.377.933z"/></svg>
+                        Buy me a coffee
+                    </a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10">
-        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-lg font-bold text-gradient">ProofVisit</p>
-            <p class="mt-2 text-sm text-gray-400">Built with Swift & SwiftUI | Developed by Mirsadra</p>
+    <footer class="border-t border-white/10 mt-20 bg-black/40">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xl font-bold text-gradient">ProofVisit</p>
+            <p class="mt-2 text-sm text-gray-400">A product of Parkinsad Ltd. (Pending Registration)</p>
+            <p class="text-xs text-gray-500 mt-1">Bury Saint Edmunds, UK</p>
             
-            <div class="mt-6 flex justify-center space-x-6">
-                <a href="privacy-policy.html" class="text-xs text-gray-500 hover:text-sky-400 transition-colors">Privacy Policy</a>
-                <a href="https://github.com/mirsadra/proof-app" class="text-xs text-gray-500 hover:text-sky-400 transition-colors">GitHub</a>
-                <a href="#domain-verification" class="text-xs text-gray-500 hover:text-sky-400 transition-colors">Support</a>
+            <div class="mt-8 flex justify-center space-x-8">
+                <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Terms</a>
+                <a href="mailto:support@proofvisit.com" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a>
             </div>
+            
+            <p class="mt-8 text-xs text-gray-600">
+                &copy; 2026 Parkinsad Ltd. All rights reserved. 
+            </p>
         </div>
     </footer>
 
     <script>
-        // Simple Intersection Observer to fade in elements on scroll
+        // Intersection Observer for fade-in animations
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = {
-            threshold: 0.2,
+            threshold: 0.15,
             rootMargin: "0px 0px -50px 0px"
         };
         const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
             entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('visible');
-                    appearOnScroll.unobserve(entry.target);
-                }
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
             });
         }, appearOptions);
 
         faders.forEach(fader => {
             appearOnScroll.observe(fader);
         });
-
-        // Add a simple class for tech items using tailwind classes
-        document.querySelectorAll('.tech-item').forEach(item => {
-            item.classList.add('inline-block', 'bg-sky-400/10', 'text-sky-300', 'px-3', 'py-1', 'rounded-full', 'text-sm');
-        });
-
     </script>
 </body>
 </html>
-
