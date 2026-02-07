@@ -12,10 +12,18 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    colors: {
+                        // Your Custom Palette
+                        myBlack: '#09090B',
+                        myWhite: '#FAFAFA',
+                        myBlue: '#1447E5',
+                        myDarkGreen: '#06402B',
+                        myGreen: '#5DA500',
+                        myRed: '#FB2B37',
+                    },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
                         'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         float: {
@@ -30,40 +38,32 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0A0A1A;
-            color: #E0E0E0;
+            background-color: #09090B; /* myBlack */
+            color: #FAFAFA; /* myWhite */
             overflow-x: hidden;
         }
 
+        /* Subtle background noise/gradient using only myBlack and very subtle white/blue hints */
         .hero-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image:
-                radial-gradient(circle at 15% 50%, rgba(100, 116, 222, 0.15), transparent 30%),
-                radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.15), transparent 30%);
+                radial-gradient(circle at 50% 0%, rgba(20, 71, 229, 0.15), transparent 40%);
             z-index: -1;
         }
 
-        .text-gradient {
-            background-image: linear-gradient(90deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(250, 250, 250, 0.03); /* myWhite at very low opacity */
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(250, 250, 250, 0.08);
             transition: all 0.3s ease;
         }
 
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(250, 250, 250, 0.06);
+            border: 1px solid rgba(20, 71, 229, 0.4); /* myBlue border on hover */
             transform: translateY(-5px);
-            box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.1);
         }
 
         /* Phone Mockup Styling */
@@ -72,8 +72,8 @@
             border: 8px solid #2d2d2d;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            background: #000;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            background: #09090B;
         }
         
         .phone-notch {
@@ -103,18 +103,18 @@
 <body class="antialiased">
 
     <header class="fixed top-0 left-0 w-full z-50">
-        <nav class="bg-[#0A0A1A]/80 backdrop-blur-lg border-b border-white/5">
+        <nav class="bg-myBlack/90 backdrop-blur-lg border-b border-myWhite/10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
-                        <span class="text-2xl font-bold text-gradient tracking-tight">Proof Chain</span>
-                        <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30">BETA</span>
+                        <span class="text-2xl font-bold text-myWhite tracking-tight">Proof Chain</span>
+                        <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-bold bg-myWhite/10 text-myWhite border border-myWhite/20">BETA</span>
                     </div>
                     <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-6">
-                            <a href="#showcase" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">App Tour</a>
-                            <a href="#pricing" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Pricing</a>
-                            <a href="#beta-access" class="px-4 py-2 rounded-full text-sm font-semibold bg-white text-black hover:bg-gray-200 transition-colors">Get Beta Access</a>
+                        <div class="ml-10 flex items-baseline space-x-8">
+                            <a href="#showcase" class="text-sm font-medium text-myWhite/60 hover:text-myWhite transition-colors">App Tour</a>
+                            <a href="#pricing" class="text-sm font-medium text-myWhite/60 hover:text-myWhite transition-colors">Pricing</a>
+                            <a href="#beta-access" class="px-4 py-2 rounded-full text-sm font-semibold bg-myWhite text-myBlack hover:bg-myWhite/90 transition-colors">Get Beta Access</a>
                         </div>
                     </div>
                 </div>
@@ -127,28 +127,28 @@
             <div class="hero-bg"></div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-8 fade-in">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-myGreen/10 border border-myGreen/20 text-myGreen text-sm font-medium mb-8 fade-in">
                     <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-myGreen opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-myGreen"></span>
                     </span>
                     Beta Released - Join the Testing Phase
                 </div>
 
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight mb-6 fade-in">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-myWhite leading-tight mb-6 fade-in">
                     Verify Reality. <br />
-                    <span class="text-gradient">Secure Your Presence.</span>
+                    <span class="text-myWhite/50">Secure Your Presence.</span>
                 </h1>
                 
-                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 fade-in">
-                    The cryptographic proof of visit standard. Now available on <span class="text-white font-semibold">iPhone</span> and <span class="text-white font-semibold">iPad</span>.
+                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-myWhite/60 fade-in">
+                    The cryptographic proof of visit standard. Now available on <span class="text-myWhite font-semibold">iPhone</span> and <span class="text-myWhite font-semibold">iPad</span>.
                 </p>
 
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 fade-in">
-                    <a href="#beta-access" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-sky-900/20">
+                    <a href="#beta-access" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-myBlue text-myWhite font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-myBlue/20">
                         Request TestFlight Invite
                     </a>
-                    <a href="#support" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-lg hover:bg-white/10 transition-colors">
+                    <a href="#support" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-myWhite/5 border border-myWhite/10 text-myWhite font-semibold text-lg hover:bg-myWhite/10 transition-colors">
                         Support Development
                     </a>
                 </div>
@@ -160,34 +160,34 @@
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     
                     <div class="fade-in z-20 relative">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        <h2 class="text-3xl md:text-4xl font-bold text-myWhite mb-6">
                             Experience the Future of <br />
-                            <span class="text-gradient">Loyalty & Verification</span>
+                            <span class="text-myBlue">Loyalty & Verification</span>
                         </h2>
-                        <div class="space-y-6 text-gray-400 text-lg">
+                        <div class="space-y-6 text-myWhite/60 text-lg">
                             <p>
-                                <strong class="text-white">For Business Owners:</strong> 
+                                <strong class="text-myWhite">For Business Owners:</strong> 
                                 Don't wait for the future. Encourage your customers to verify their visits cryptographically. Build a loyal community that can prove they were really there.
                             </p>
                             <p>
-                                <strong class="text-white">For Customers:</strong> 
+                                <strong class="text-myWhite">For Customers:</strong> 
                                 Proof Chain works best when your local spots are onboard. If your favorite cafe or store isn't on Proof Chain yet, ask them to join the beta!
                             </p>
                             <div class="pt-4 flex items-center gap-4">
-                                <span class="inline-flex items-center gap-2 bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700">
-                                    <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.61-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.18 2.83zM13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.04.05-2.29.69-3.02 1.55-.67.78-1.26 2.05-1.11 3.15 1.19.09 2.42-.71 3.06-1.59z"></path></svg>
-                                    <span class="text-sm font-semibold">iOS App</span>
+                                <span class="inline-flex items-center gap-2 bg-myWhite/5 px-3 py-1.5 rounded-lg border border-myWhite/10">
+                                    <svg class="w-5 h-5 text-myWhite" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.61-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.18 2.83zM13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.04.05-2.29.69-3.02 1.55-.67.78-1.26 2.05-1.11 3.15 1.19.09 2.42-.71 3.06-1.59z"></path></svg>
+                                    <span class="text-sm font-semibold text-myWhite">iOS App</span>
                                 </span>
-                                <span class="inline-flex items-center gap-2 bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700">
-                                    <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H5V4h14v16z"/></svg>
-                                    <span class="text-sm font-semibold">iPad Optimized</span>
+                                <span class="inline-flex items-center gap-2 bg-myWhite/5 px-3 py-1.5 rounded-lg border border-myWhite/10">
+                                    <svg class="w-5 h-5 text-myWhite" fill="currentColor" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H5V4h14v16z"/></svg>
+                                    <span class="text-sm font-semibold text-myWhite">iPad Optimized</span>
                                 </span>
                             </div>
                         </div>
                     </div>
 
                     <div class="relative h-[600px] w-full fade-in">
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-sky-500/20 rounded-full blur-[80px]"></div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-myBlue/20 rounded-full blur-[80px]"></div>
 
                         <div class="absolute top-1/2 left-1/2 z-20 -translate-x-[105%] -translate-y-1/2">
                             <div class="animate-float">
@@ -207,73 +207,76 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+            </div>
         </section>
 
-        <section id="pricing" class="py-24 bg-white/5 relative">
+        <section id="pricing" class="py-24 bg-myWhite/5 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Simple Pricing for Growth</h2>
-                    <p class="mt-4 text-gray-400">Start for free, upgrade when you're ready to scale.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-myWhite">Simple Pricing for Growth</h2>
+                    <p class="mt-4 text-myWhite/50">Start for free, upgrade when you're ready to scale.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     
                     <div class="glass-card p-8 rounded-3xl fade-in">
-                        <h3 class="text-xl font-semibold text-white">Discovery</h3>
-                        <p class="mt-2 text-sm text-gray-400">Perfect for small shops testing the water.</p>
+                        <h3 class="text-xl font-semibold text-myWhite">Discovery</h3>
+                        <p class="mt-2 text-sm text-myWhite/50">Perfect for small shops testing the water.</p>
                         <div class="my-6">
-                            <span class="text-4xl font-bold text-white">£0</span>
-                            <span class="text-gray-500"> / forever</span>
+                            <span class="text-4xl font-bold text-myWhite">£0</span>
+                            <span class="text-myWhite/50"> / forever</span>
                         </div>
                         <ul class="space-y-4 mb-8">
-                            <li class="flex items-center text-sm text-gray-300">
-                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <li class="flex items-center text-sm text-myWhite/80">
+                                <svg class="w-5 h-5 text-myGreen mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 Unlimited Customers
                             </li>
-                            <li class="flex items-center text-sm text-gray-300">
-                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <li class="flex items-center text-sm text-myWhite/80">
+                                <svg class="w-5 h-5 text-myGreen mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 Basic QR Generation
                             </li>
-                            <li class="flex items-center text-sm text-gray-300">
-                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <li class="flex items-center text-sm text-myWhite/80">
+                                <svg class="w-5 h-5 text-myGreen mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 7-Day History
                             </li>
                         </ul>
-                        <a href="#beta-access" class="block w-full py-3 px-6 text-center rounded-xl bg-white/10 text-white font-semibold hover:bg-white/20 transition-colors">Start Free</a>
+                        <a href="#beta-access" class="block w-full py-3 px-6 text-center rounded-xl bg-myWhite/10 text-myWhite font-semibold hover:bg-myWhite/20 transition-colors">Start Free</a>
                     </div>
 
-                    <div class="glass-card p-8 rounded-3xl border-sky-500/50 relative overflow-hidden fade-in" style="background: linear-gradient(145deg, rgba(56,189,248,0.1), rgba(0,0,0,0));">
-                        <div class="absolute top-0 right-0 bg-sky-500 text-xs font-bold px-3 py-1 rounded-bl-xl text-black">RECOMMENDED</div>
-                        <h3 class="text-xl font-semibold text-white">Professional</h3>
-                        <p class="mt-2 text-sm text-gray-400">For businesses serious about loyalty.</p>
+                    <div class="glass-card p-8 rounded-3xl border-myBlue/50 relative overflow-hidden fade-in" style="background: linear-gradient(145deg, rgba(20, 71, 229, 0.1), rgba(0,0,0,0));">
+                        <div class="absolute top-0 right-0 bg-myBlue text-xs font-bold px-3 py-1 rounded-bl-xl text-myWhite">RECOMMENDED</div>
+                        <h3 class="text-xl font-semibold text-myWhite">Professional</h3>
+                        <p class="mt-2 text-sm text-myWhite/60">For businesses serious about loyalty.</p>
                         <div class="my-6">
                             <div class="flex items-baseline">
-                                <span class="text-4xl font-bold text-white">£9.99</span>
-                                <span class="text-gray-500 ml-1">/ month</span>
+                                <span class="text-4xl font-bold text-myWhite">£9.99</span>
+                                <span class="text-myWhite/50 ml-1">/ month</span>
                             </div>
-                            <div class="mt-2 text-sm text-sky-400 font-medium">
-                                Or £59.99 for 1st year <span class="text-gray-500 font-normal line-through text-xs ml-1">£89.99</span>
+                            <div class="mt-2 text-sm text-myBlue font-medium">
+                                Or £59.99 for 1st year <span class="text-myWhite/40 font-normal line-through text-xs ml-1">£89.99</span>
                             </div>
                         </div>
                         <ul class="space-y-4 mb-8">
-                            <li class="flex items-center text-sm text-white font-medium">
-                                <svg class="w-5 h-5 text-sky-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <li class="flex items-center text-sm text-myWhite font-medium">
+                                <svg class="w-5 h-5 text-myBlue mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 Real-time Analytics & Dashboard
                             </li>
-                            <li class="flex items-center text-sm text-white font-medium">
-                                <svg class="w-5 h-5 text-sky-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <li class="flex items-center text-sm text-myWhite font-medium">
+                                <svg class="w-5 h-5 text-myBlue mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 Unlimited History & Exports
                             </li>
-                            <li class="flex items-center text-sm text-white font-medium">
-                                <svg class="w-5 h-5 text-sky-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <li class="flex items-center text-sm text-myWhite font-medium">
+                                <svg class="w-5 h-5 text-myBlue mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 iPad Kiosk Mode
                             </li>
-                            <li class="flex items-center text-sm text-white font-medium">
-                                <svg class="w-5 h-5 text-sky-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <li class="flex items-center text-sm text-myWhite font-medium">
+                                <svg class="w-5 h-5 text-myBlue mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 Auto-rotating Verification Words
                             </li>
                         </ul>
-                        <a href="#beta-access" class="block w-full py-3 px-6 text-center rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold hover:opacity-90 transition-opacity">Get Pro Beta</a>
+                        <a href="#beta-access" class="block w-full py-3 px-6 text-center rounded-xl bg-myBlue text-myWhite font-bold hover:bg-myBlue/80 transition-opacity">Get Pro Beta</a>
                     </div>
                 </div>
             </div>
@@ -282,26 +285,26 @@
         <section id="beta-access" class="py-24 relative">
             <div class="max-w-3xl mx-auto px-4 text-center">
                 <div class="glass-card p-10 rounded-3xl fade-in">
-                    <h2 class="text-3xl font-bold text-white mb-4">Join the TestFlight Beta</h2>
-                    <p class="text-gray-400 mb-8">
+                    <h2 class="text-3xl font-bold text-myWhite mb-4">Join the TestFlight Beta</h2>
+                    <p class="text-myWhite/60 mb-8">
                         We are currently inviting users to test the app via Apple TestFlight. Enter your Apple ID email below to receive an invitation code.
                     </p>
                     
                     <form class="max-w-md mx-auto flex gap-2 flex-col sm:flex-row mb-8" onsubmit="event.preventDefault(); alert('Thank you! You have been added to the waitlist.');">
-                        <input type="email" placeholder="your@email.com" required class="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-sky-500">
-                        <button type="submit" class="bg-white text-black font-bold px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors">
+                        <input type="email" placeholder="your@email.com" required class="flex-1 bg-myWhite/10 border border-myWhite/20 rounded-lg px-4 py-3 text-myWhite placeholder-myWhite/30 focus:outline-none focus:border-myBlue">
+                        <button type="submit" class="bg-myWhite text-myBlack font-bold px-6 py-3 rounded-lg hover:bg-myWhite/90 transition-colors">
                             Request Invite
                         </button>
                     </form>
-                    <p class="text-xs text-gray-500">By submitting, you agree to receive beta updates from Proof Chain.</p>
+                    <p class="text-xs text-myWhite/40">By submitting, you agree to receive beta updates from Proof Chain.</p>
                 </div>
 
                 <div id="support" class="mt-16 fade-in">
-                    <div class="inline-block p-1 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 mb-6">
-                        <span class="px-4 py-1 text-xs font-bold text-yellow-500 uppercase tracking-wide">Support the Founder</span>
+                    <div class="inline-block p-1 rounded-full bg-myWhite/5 border border-myWhite/10 mb-6">
+                        <span class="px-4 py-1 text-xs font-bold text-myWhite uppercase tracking-wide">Support the Founder</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Help Us Register Parkinsad Ltd.</h3>
-                    <p class="text-gray-400 max-w-xl mx-auto mb-8">
+                    <h3 class="text-2xl font-bold text-myWhite mb-4">Help Us Register Parkinsad Ltd.</h3>
+                    <p class="text-myWhite/60 max-w-xl mx-auto mb-8">
                         Proof Chain is developed by <strong>Parkinsad Ltd</strong> (currently pending registration). We are a bootstrapped startup seeking funding to cover legal registration fees and server costs.
                     </p>
                     
@@ -315,19 +318,19 @@
 
     </main>
 
-    <footer class="border-t border-white/10 mt-20 bg-black/40">
+    <footer class="border-t border-myWhite/10 mt-20 bg-myBlack/40">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-xl font-bold text-gradient">Proof Chain</p>
-            <p class="mt-2 text-sm text-gray-400">A product of Parkinsad Ltd. (Pending Registration)</p>
-            <p class="text-xs text-gray-500 mt-1">The United Kingdom</p>
+            <p class="text-xl font-bold text-myWhite tracking-tight">Proof Chain</p>
+            <p class="mt-2 text-sm text-myWhite/50">A product of Parkinsad Ltd. (Pending Registration)</p>
+            <p class="text-xs text-myWhite/40 mt-1">United Kingdom</p>
             
             <div class="mt-8 flex justify-center space-x-8">
-                <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy</a>
-                <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Terms</a>
-                <a href="mailto:support@proofsite.app" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a>
+                <a href="#" class="text-sm text-myWhite/50 hover:text-myWhite transition-colors">Privacy</a>
+                <a href="#" class="text-sm text-myWhite/50 hover:text-myWhite transition-colors">Terms</a>
+                <a href="mailto:support@proofapp.site" class="text-sm text-myWhite/50 hover:text-myWhite transition-colors">Contact</a>
             </div>
             
-            <p class="mt-8 text-xs text-gray-600">
+            <p class="mt-8 text-xs text-myWhite/30">
                 &copy; 2026 Parkinsad Ltd. All rights reserved. 
             </p>
         </div>
